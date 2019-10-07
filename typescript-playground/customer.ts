@@ -1,12 +1,8 @@
 export class Customer {
-    id: number;
 
-    constructor(id: number) {
-        this.id = id;
-    }
+    constructor(public id: number) {}
 
     foobar(): string {
-
         setTimeout(() => {
             console.log('ID ist ' + this.id);
         }, 2000);
