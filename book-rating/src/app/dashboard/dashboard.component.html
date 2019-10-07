@@ -1,1 +1,8 @@
-{{ books }}
+<br-book
+  *ngFor="let b of books; even as e"
+  [ngClass]="{ grayBg: e }"
+  [book]="b"></br-book>
+
+<p>
+  Anzahl Bücher: {{ books.length }}
+</p>

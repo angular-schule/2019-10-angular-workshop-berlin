@@ -1,0 +1,18 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <img src="//api.angular.schule/avatar/{{ book.rating }}" alt="Book Cover" class="float-right img-thumbnail">
+
+    <div class="card-title">
+      <h2>{{ book.title }}</h2>
+      <span class="badge badge-secondary">{{ book.rating }}</span>
+    </div>
+
+    <p>
+      {{ book.description }}
+    </p>
+
+
+    <span *ngFor="let x of getStars()">*</span>
+  </div>
+</div>
+
