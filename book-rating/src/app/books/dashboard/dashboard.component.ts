@@ -8,12 +8,11 @@ import { BookRatingService } from '../shared/book-rating.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
   url = '//angular.schule';
 
   books: Book[];
 
-  constructor(private rs: BookRatingService) { }
+  constructor(private rs: BookRatingService) {}
 
   ngOnInit() {
     this.books = [
@@ -28,7 +27,7 @@ export class DashboardComponent implements OnInit {
         title: 'React',
         description: 'Ein anderes Framework',
         rating: 3
-      },
+      }
     ];
   }
 
@@ -44,10 +43,7 @@ export class DashboardComponent implements OnInit {
 
   updateList(book: Book) {
     this.books = this.books
-      .map(b => book.isbn === b.isbn ? book : b)
+      .map(b => (book.isbn === b.isbn ? book : b))
       .sort((a, b) => b.rating - a.rating);
   }
-
 }
-
-
