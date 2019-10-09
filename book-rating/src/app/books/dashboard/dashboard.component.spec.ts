@@ -52,7 +52,7 @@ describe('DashboardComponent', () => {
     spyOn(rs, 'rateUp').and.callThrough();
 
     component.rateUp(book);
-    
+
     expect(rs.rateUp).toHaveBeenCalled();
   });
 });
