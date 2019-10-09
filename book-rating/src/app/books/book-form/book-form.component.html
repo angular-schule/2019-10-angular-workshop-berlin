@@ -1,4 +1,4 @@
-<form [formGroup]="bookForm">
+<form [formGroup]="bookForm" (ngSubmit)="submitForm()">
 
   <div class="form-group">
     <label>ISBN</label>
@@ -16,6 +16,12 @@
   <div class="form-group">
     <label>Beschreibung</label>
     <textarea formControlName="description" class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit"
+      class="btn btn-primary"
+      [disabled]="bookForm.invalid">Speichern</button>
   </div>
 
 </form>

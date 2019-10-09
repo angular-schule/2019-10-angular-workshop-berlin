@@ -1,5 +1,4 @@
-<br-book-form></br-book-form>
-
+<br-book-form (submitBook)="createBook($event)"></br-book-form>
 
 <br-book
   *ngFor="let b of books; even as e"
