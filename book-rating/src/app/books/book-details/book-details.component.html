@@ -1,4 +1,14 @@
-<p>book-details works!</p>
+<ng-container *ngIf="book; else loading">
+  <h2>{{ book.title }}</h2>
+
+  <p>
+    {{ book.description }}
+  </p>
+</ng-container>
+
+<ng-template #loading>
+  Laden...
+</ng-template>
 
 <hr>
 
