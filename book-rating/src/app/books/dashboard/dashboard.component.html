@@ -1,12 +1,14 @@
 <br-book-form (submitBook)="createBook($event)"></br-book-form>
 
-<br-book
-  *ngFor="let b of books; even as e"
-  [ngClass]="{ grayBg: e }"
-  [book]="b"
-  (rateUp)="rateUp($event)"
-  (rateDown)="rateDown(b)"></br-book>
+<ng-container *ngIf="books">
+  <br-book
+    *ngFor="let b of books; even as e"
+    [ngClass]="{ grayBg: e }"
+    [book]="b"
+    (rateUp)="rateUp($event)"
+    (rateDown)="rateDown(b)"></br-book>
 
-<p>
-  Anzahl Bücher: {{ books.length }}
-</p>
+  <p>
+    Anzahl Bücher: {{ books.length }}
+  </p>
+</ng-container>
