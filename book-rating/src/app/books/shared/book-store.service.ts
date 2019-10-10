@@ -37,4 +37,8 @@ export class BookStoreService {
   create(book: Book) {
     return this.http.post(`${this.apiUrl}/books`, book, { responseType: 'text' });
   }
+
+  search(term: string) {
+    return this.http.get<Book[]>(`${this.apiUrl}/books/search/${term}`);
+  }
 }

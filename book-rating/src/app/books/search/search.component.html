@@ -1,0 +1,12 @@
+<div class="form-group" [formGroup]="searchForm">
+  <label>Suche</label>
+  <input type="text" class="form-control" formControlName="term">
+</div>
+
+<div *ngIf="isLoading">Laden...</div>
+
+<ul>
+  <li *ngFor="let b of result$ | async">{{ b.title }}</li>
+</ul>
+
+

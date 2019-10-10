@@ -31,7 +31,7 @@ export class BookComponent implements OnInit {
   }
 
   log() {
-    console.log('CD');
+    // console.log('CD');
   }
 
 }

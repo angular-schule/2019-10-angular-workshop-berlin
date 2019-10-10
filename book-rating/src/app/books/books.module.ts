@@ -7,13 +7,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     BookComponent,
     BookFormComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
