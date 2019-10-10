@@ -1,4 +1,4 @@
-<ng-container *ngIf="book; else loading">
+<ng-container *ngIf="book$ | async as book; else loading">
   <h2>{{ book.title }}</h2>
 
   <p>

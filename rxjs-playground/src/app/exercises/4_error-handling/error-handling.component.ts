@@ -15,7 +15,14 @@ export class ErrorHandlingComponent {
   constructor(private es: ExerciseService) { }
 
   start() {
-    this.es.randomError().subscribe(
+    this.es.randomError().pipe(
+      // retry(5)
+      catchError(err => {
+        console.log('FEHLER GEFANGEN!');
+        // return throwError('BÖSER FEHLER!');
+        return of('Nichts passiert! 😇');
+      })
+    ).subscribe(
       value => this.logStream$.next(value),
       err => this.logStream$.next('💥 ERROR: ' + err)
     );

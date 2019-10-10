@@ -3,6 +3,7 @@ import { Subject, BehaviorSubject, ReplaySubject, Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 
 import { MeasureValuesService } from './measure-values.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'rxw-multicast',
@@ -13,13 +14,17 @@ export class MulticastComponent implements OnInit {
   listeners = [];
   logStream$ = new Subject();
 
-  measureValues$: Observable<number>; // später: Subject<number>
+  measureValues$: Subject<number>;
 
   constructor(private mvs: MeasureValuesService) { }
 
   ngOnInit() {
     /*******************************/
 
+    // this.measureValues$ = this.mvs.getValues().pipe(share());
+
+    this.measureValues$ = new ReplaySubject<number>(5);
+    this.mvs.getValues().subscribe(this.measureValues$);
 
     /*******************************/
   }
